@@ -1,4 +1,6 @@
 import '@/app/globals.css'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -6,7 +8,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Patricia de Sá',
+  title: 'Patrícia de Sá',
   description: 'Specialized in content writing, editing, and copywriting',
   icons: '/favicon.png'
 }
@@ -25,7 +27,9 @@ export default function RootLayout({
           inter.className
         )}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
