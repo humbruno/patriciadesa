@@ -1,5 +1,6 @@
 'use client'
 
+import { Loader } from '@/components/loading'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -12,6 +13,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
@@ -31,6 +33,8 @@ const formSchema = z.object({
 type ValidationSchema = z.infer<typeof formSchema>
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false)
+
   const form = useForm<ValidationSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,9 +51,22 @@ export default function Contact() {
     })
   }
 
-  function onSubmit(values: ValidationSchema) {
-    console.log(values)
-    toast.success('Sent! I will get back to you shortly :)')
+  async function onSubmit(values: ValidationSchema) {
+    try {
+      setIsLoading(true)
+      await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
+      toast.success('Sent! I will get back to you shortly :)')
+    } catch (e) {
+      toast.error('Something went wrong!')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -107,7 +124,13 @@ export default function Contact() {
               variant={form.formState.isSubmitted ? 'outline' : 'default'}
               type="submit"
             >
-              {form.formState.isSubmitted ? 'Sent!' : 'Send'}
+              {form.formState.isSubmitted ? (
+                'Sent!'
+              ) : isLoading ? (
+                <Loader />
+              ) : (
+                'Send'
+              )}
             </Button>
             {form.formState.isSubmitted && (
               <Button
