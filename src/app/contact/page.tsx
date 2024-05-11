@@ -121,10 +121,12 @@ export default function Contact() {
           />
           <div className="mt-5 flex gap-5">
             <Button
-              variant={form.formState.isSubmitted ? 'outline' : 'default'}
+              variant={
+                form.formState.isSubmitSuccessful ? 'outline' : 'default'
+              }
               type="submit"
             >
-              {form.formState.isSubmitted ? (
+              {form.formState.isSubmitSuccessful ? (
                 'Sent!'
               ) : isLoading ? (
                 <Loader />
@@ -132,7 +134,7 @@ export default function Contact() {
                 'Send'
               )}
             </Button>
-            {form.formState.isSubmitted && (
+            {form.formState.isSubmitSuccessful && (
               <Button
                 onClick={() => form.reset({ email: '', message: '', name: '' })}
                 type="reset"
