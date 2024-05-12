@@ -14,13 +14,16 @@ export function NavLink({
   const pathname = usePathname()
 
   return (
-    <li
-      className={cn(
-        'cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold capitalize text-gray-500 transition-all hover:scale-[105%] hover:bg-black/10',
-        pathname === href ? 'bg-black/10' : ''
-      )}
-    >
-      <Link href={href}>{children}</Link>
+    <li className="flex">
+      <Link
+        className={cn(
+          'cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold capitalize text-gray-500 transition-all hover:scale-[105%] hover:bg-black/10',
+          pathname === href ? 'bg-black/10' : ''
+        )}
+        href={href}
+      >
+        {children}
+      </Link>
     </li>
   )
 }
