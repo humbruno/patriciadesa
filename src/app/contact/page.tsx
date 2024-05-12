@@ -12,6 +12,12 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -147,12 +153,21 @@ export default function Contact() {
       </Form>
       <p className="mt-20 self-end text-sm text-gray-500">
         or find me at{' '}
-        <span
-          onClick={handleEmailClick}
-          className="inline cursor-pointer font-mono font-bold text-green-500 hover:underline"
-        >
-          {EMAIL}
-        </span>
+        <TooltipProvider delayDuration={0}>
+          <Tooltip>
+            <TooltipTrigger>
+              <span
+                onClick={handleEmailClick}
+                className="inline cursor-pointer font-mono font-bold text-green-500 hover:underline"
+              >
+                {EMAIL}
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="text-xs">Click to Copy</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </p>
     </main>
   )
