@@ -27,8 +27,13 @@ export function Footer() {
         {FOOTER_ITEMS.map((v) => (
           <Tooltip key={v.title}>
             <TooltipTrigger className="transition-transform hover:scale-110">
-              <a target="_blank" href={v.url}>
+              <a
+                target="_blank"
+                href={v.url}
+                className="flex flex-col items-center gap-2 text-xs"
+              >
                 {v.icon}
+                <span className="block lg:hidden">{v.title}</span>
               </a>
             </TooltipTrigger>
             <TooltipContent>

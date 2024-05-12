@@ -12,13 +12,8 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
 import { zodResolver } from '@hookform/resolvers/zod'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -125,12 +120,13 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          <div className="mt-5 flex gap-5">
+          <div className="mt-5 flex flex-col gap-5 lg:flex-row">
             <Button
               variant={
                 form.formState.isSubmitSuccessful ? 'outline' : 'default'
               }
               type="submit"
+              className="w-full lg:w-auto"
             >
               {form.formState.isSubmitSuccessful ? (
                 'Sent!'
@@ -144,6 +140,7 @@ export default function Contact() {
               <Button
                 onClick={() => form.reset({ email: '', message: '', name: '' })}
                 type="reset"
+                className="w-full lg:w-auto"
               >
                 Send a new message
               </Button>
@@ -153,22 +150,20 @@ export default function Contact() {
       </Form>
       <p className="mt-20 self-end text-sm text-gray-500">
         or find me at{' '}
-        <TooltipProvider delayDuration={0}>
-          <Tooltip>
-            <TooltipTrigger>
-              <span
-                onClick={handleEmailClick}
-                className="inline cursor-pointer font-mono font-bold text-green-500 hover:underline"
-              >
-                {EMAIL}
-              </span>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p className="text-xs">Click to Copy</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <span
+          onClick={handleEmailClick}
+          className="inline cursor-pointer font-mono font-bold text-green-500 hover:underline"
+        >
+          {EMAIL}
+        </span>
       </p>
+      <Image
+        width={180}
+        height={180}
+        alt="Click email to copy"
+        src="/copy.png"
+        className="self-end"
+      />
     </main>
   )
 }
