@@ -1,11 +1,42 @@
-import { Linkedin } from 'lucide-react'
+import { LinkedinIcon } from './linkedin-icon'
+import { MediumIcon } from './medium-icon'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from './ui/tooltip'
+
+const FOOTER_ITEMS = [
+  {
+    title: 'LinkedIn',
+    icon: <LinkedinIcon />,
+    url: ''
+  },
+  {
+    title: 'Medium',
+    icon: <MediumIcon />,
+    url: ''
+  }
+] as const
 
 export function Footer() {
   return (
-    <footer className="container mt-auto flex items-center justify-center gap-5 border-t border-gray-700/10 py-10">
-      <button>
-        <Linkedin className="text-gray-400 transition-all hover:text-gray-700" />
-      </button>
+    <footer className="container mt-auto flex items-center justify-center gap-5 border-t border-gray-700/10 py-10 opacity-70">
+      <TooltipProvider delayDuration={0}>
+        {FOOTER_ITEMS.map((v) => (
+          <Tooltip key={v.title}>
+            <TooltipTrigger className="transition-transform hover:scale-110">
+              <a target="_blank" href={v.url}>
+                {v.icon}
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{v.title}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </TooltipProvider>
     </footer>
   )
 }
