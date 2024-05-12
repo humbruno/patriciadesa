@@ -28,7 +28,7 @@ function Navigation() {
       <ul className="flex gap-10">
         {NAVIGATION.map((item) => (
           <NavLink key={item} href={`/${item}`}>
-            {item}
+            {item === 'resume' ? 'Resumé' : item}
           </NavLink>
         ))}
       </ul>
