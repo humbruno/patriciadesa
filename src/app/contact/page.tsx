@@ -76,7 +76,7 @@ export default function Contact() {
   }
 
   return (
-    <main className="container flex flex-col">
+    <main className="container flex flex-col py-20 lg:py-36">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
