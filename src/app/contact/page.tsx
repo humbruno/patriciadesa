@@ -126,7 +126,7 @@ export default function Contact() {
                 form.formState.isSubmitSuccessful ? 'outline' : 'default'
               }
               type="submit"
-              className="w-full lg:w-auto"
+              className="w-full font-bold lg:w-auto"
             >
               {form.formState.isSubmitSuccessful ? (
                 'Sent!'
@@ -140,7 +140,7 @@ export default function Contact() {
               <Button
                 onClick={() => form.reset({ email: '', message: '', name: '' })}
                 type="reset"
-                className="w-full lg:w-auto"
+                className="w-full font-bold lg:w-auto"
               >
                 Send a new message
               </Button>

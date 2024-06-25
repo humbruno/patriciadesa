@@ -4,11 +4,10 @@ import {
   SheetContent,
   SheetTrigger
 } from '@/components/ui/sheet'
+import { NAVIGATION } from '@/lib/constants'
 import { Menu } from 'lucide-react'
 import Link from 'next/link'
 import { NavLink } from './nav-link'
-
-const NAVIGATION = ['about', 'contact', 'resume'] as const
 
 export function Header() {
   return (
@@ -27,8 +26,8 @@ function Navigation() {
     <nav className="hidden md:block">
       <ul className="flex gap-10">
         {NAVIGATION.map((item) => (
-          <NavLink key={item} href={`/${item}`}>
-            {item === 'resume' ? 'Resumé' : item}
+          <NavLink key={item.label} href={item.href}>
+            {item.label}
           </NavLink>
         ))}
       </ul>
@@ -45,14 +44,9 @@ function MobileNavigation() {
         </SheetTrigger>
         <SheetContent className="h-full">
           <ul className="m-auto flex h-full flex-col items-center justify-center gap-10">
-            <NavLink href="/">
-              <SheetClose className="capitalize">Home</SheetClose>
-            </NavLink>
             {NAVIGATION.map((item) => (
-              <NavLink key={item} href={`/${item}`}>
-                <SheetClose className="capitalize">
-                  {item === 'resume' ? 'Resumé' : item}
-                </SheetClose>
+              <NavLink key={item.label} href={item.href}>
+                <SheetClose className="capitalize">{item.label}</SheetClose>
               </NavLink>
             ))}
           </ul>

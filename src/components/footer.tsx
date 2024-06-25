@@ -1,5 +1,4 @@
 import { LinkedinIcon } from './linkedin-icon'
-import { MediumIcon } from './medium-icon'
 import {
   Tooltip,
   TooltipContent,
@@ -11,12 +10,7 @@ const FOOTER_ITEMS = [
   {
     title: 'LinkedIn',
     icon: <LinkedinIcon />,
-    url: ''
-  },
-  {
-    title: 'Medium',
-    icon: <MediumIcon />,
-    url: ''
+    url: 'https://www.linkedin.com/in/patr%C3%ADciades%C3%A1/'
   }
 ] as const
 

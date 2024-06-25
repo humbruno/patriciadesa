@@ -4,9 +4,9 @@ import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Mulish } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const mulish = Mulish({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Patrícia de Sá',
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body
         className={cn(
           'flex min-h-screen flex-col antialiased',
-          inter.className
+          mulish.className
         )}
       >
         <Header />
