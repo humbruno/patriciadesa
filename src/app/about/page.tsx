@@ -34,7 +34,7 @@ const SKILLS = [
 export default function About() {
   return (
     <main className="container flex h-full flex-col">
-      <h2 className="text-center text-3xl font-semibold text-gray-700">
+      <h2 className="text-3xl font-semibold text-gray-700">
         Hi, I&apos;m Patrícia.
       </h2>
       <div className="mt-6 space-y-6 text-gray-700 lg:text-lg">
@@ -55,7 +55,7 @@ export default function About() {
         </p>
       </div>
       <div className="mt-12 space-y-6">
-        <h3 className="text-center text-2xl font-semibold text-gray-700">
+        <h3 className="text-2xl font-semibold text-gray-700">
           What motivates me
         </h3>
         <p className="text-gray-700 lg:text-lg">
@@ -78,9 +78,7 @@ export default function About() {
         {SKILLS.map((skill) => (
           <li key={skill.title} className="flex flex-col gap-4">
             <h3 className="text-2xl font-bold text-gray-700">{skill.title}</h3>
-            <p className="text-base italic text-gray-500">
-              {skill.description}
-            </p>
+            <p className="text-base text-gray-500">{skill.description}</p>
           </li>
         ))}
       </ul>

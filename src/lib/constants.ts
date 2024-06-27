@@ -41,6 +41,11 @@ export const NAVIGATION: Navigation[] = [
     href: '/about'
   },
   {
+    label: 'Resumé',
+    href: 'https://drive.google.com/file/d/1gwY_pyRoBVq0O469sLRnb0gWGZRyupBc/view',
+    external: true
+  },
+  {
     label: 'Contact',
     href: '/contact'
   }

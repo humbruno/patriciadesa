@@ -10,4 +10,5 @@ export type Project = {
 export type Navigation = {
   label: string
   href: string
+  external?: boolean
 }

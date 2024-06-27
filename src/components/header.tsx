@@ -26,7 +26,7 @@ function Navigation() {
     <nav className="hidden md:block">
       <ul className="flex gap-10">
         {NAVIGATION.map((item) => (
-          <NavLink key={item.label} href={item.href}>
+          <NavLink key={item.label} isExternal={item.external} href={item.href}>
             {item.label}
           </NavLink>
         ))}
@@ -45,7 +45,11 @@ function MobileNavigation() {
         <SheetContent className="h-full">
           <ul className="m-auto flex h-full flex-col items-center justify-center gap-10">
             {NAVIGATION.map((item) => (
-              <NavLink key={item.label} href={item.href}>
+              <NavLink
+                key={item.label}
+                isExternal={item.external}
+                href={item.href}
+              >
                 <SheetClose className="capitalize">{item.label}</SheetClose>
               </NavLink>
             ))}
