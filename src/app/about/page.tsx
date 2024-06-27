@@ -89,7 +89,7 @@ export default function About() {
           </li>
         ))}
       </ul>
-      <h3 className="text-center text-2xl font-semibold text-gray-700">
+      <h3 className="text-center text-2xl font-semibold text-gray-700 lg:mt-32">
         My daily tools
       </h3>
       <ul className="flex flex-wrap items-center justify-evenly gap-8 pb-20 pt-14 lg:pb-10 lg:pt-14">
@@ -112,7 +112,7 @@ export default function About() {
           ))}
         </TooltipProvider>
       </ul>
-      <h3 className="text-center text-2xl font-semibold text-gray-700 lg:mt-8">
+      <h3 className="text-2xl font-semibold text-gray-700 lg:mt-36">
         Out of office, I&apos;m a...
       </h3>
       <Image src={hobbies} alt="Hobbies" className="mt-6 rounded-2xl" />

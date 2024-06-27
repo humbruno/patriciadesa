@@ -14,7 +14,11 @@ export function Projects() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group/card relative flex flex-col justify-center space-y-4 overflow-hidden transition-all lg:block xl:items-center xl:rounded-2xl">
+    <a
+      target="_blank"
+      href={project.href}
+      className="group/card relative flex cursor-pointer flex-col justify-center space-y-4 overflow-hidden transition-all lg:block xl:items-center xl:rounded-2xl"
+    >
       <Image
         src={project.image}
         alt={project.title}
@@ -33,6 +37,6 @@ function ProjectCard({ project }: { project: Project }) {
           {project.description}
         </p>
       </div>
-    </div>
+    </a>
   )
 }

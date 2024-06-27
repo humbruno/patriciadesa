@@ -17,25 +17,29 @@ export const PROJECTS: Project[] = [
     title: 'BetterSleep',
     subtitle: 'Copy Editing',
     description: 'compliance & guidelines | quality assurance | consistency',
-    image: betterSleep
+    image: betterSleep,
+    href: 'https://www.bettersleep.com/'
   },
   {
     title: 'Lunis',
     subtitle: 'Content Writing',
     description: 'content creation | webflow landing page | copywriting',
-    image: lunis
+    image: lunis,
+    href: 'https://www.lunis.ai/en'
   },
   {
     title: 'Sleep Hero',
     subtitle: 'Content Writing & Copy Editor',
     description: 'content creation | content strategy | quality review',
-    image: sleepHero
+    image: sleepHero,
+    href: 'https://www.sleep-hero.co.uk/'
   },
   {
     title: 'Skyhour',
     subtitle: 'Content writer, Copywriting & Copy Editor',
     description: 'content creation | influencer liaison | copywriting',
-    image: skyhour
+    image: skyhour,
+    href: 'https://www.instagram.com/skyhour/?hl=en'
   }
 ] as const
 

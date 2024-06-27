@@ -4,6 +4,7 @@ export type Project = {
   title: string
   subtitle: string
   description: string
+  href: string
   image: StaticImageData
 }
 
