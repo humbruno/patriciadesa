@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -72,82 +73,111 @@ export default function Contact() {
 
   return (
     <main className="container flex flex-col py-20 lg:py-36">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormDescription className="text-xl text-gray-700">
-                  Dear Patrícia de Sá,
-                </FormDescription>
-                <FormControl>
-                  <Textarea
-                    rows={15}
-                    placeholder="Write your message here..."
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage className="text-xs" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormDescription className="text-base text-gray-700">
-                  Best wishes,
-                </FormDescription>
-                <FormControl>
-                  <Input placeholder="Your name" {...field} />
-                </FormControl>
-                <FormMessage className="text-xs" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Your email" {...field} />
-                </FormControl>
-                <FormMessage className="text-xs" />
-              </FormItem>
-            )}
-          />
-          <div className="mt-5 flex flex-col gap-5 lg:flex-row">
-            <Button
-              variant={
-                form.formState.isSubmitSuccessful ? 'outline' : 'default'
-              }
-              type="submit"
-              className="w-full font-bold lg:w-auto"
-            >
-              {form.formState.isSubmitSuccessful ? (
-                'Sent!'
-              ) : isLoading ? (
-                <Loader />
-              ) : (
-                'Send'
-              )}
-            </Button>
-            {form.formState.isSubmitSuccessful && (
-              <Button
-                onClick={() => form.reset({ email: '', message: '', name: '' })}
-                type="reset"
-                className="w-full font-bold lg:w-auto"
-              >
-                Send a new message
-              </Button>
-            )}
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <div className="flex-1">
+          <h3 className="mb-8 text-2xl font-semibold text-gray-700">
+            Think my words will be a good fit?
+          </h3>
+          <h3 className="mb-4 text-2xl font-semibold text-gray-700">
+            Let&apos;s collaborate!
+          </h3>
+          <div className="space-y-2">
+            <p className="font-semibold text-gray-700 lg:text-lg">
+              Drop me a line or two about your project, and we can see if we’re
+              a good fit.
+            </p>
+            <p className="text-gray-700 lg:text-lg">
+              Feel free to send questions, proposals, or even compliments - all
+              are welcome.{' '}
+            </p>
+            <p className="text-gray-700 lg:text-lg">
+              I typically respond within 1-2 business days.
+            </p>
           </div>
-        </form>
-      </Form>
+        </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex-1 space-y-8"
+          >
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormDescription className="text-xl text-gray-700">
+                    Dear Patrícia de Sá,
+                  </FormDescription>
+                  <FormControl>
+                    <Textarea
+                      rows={15}
+                      placeholder="Write your message here..."
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-xs" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormDescription className="text-base text-gray-700">
+                    Best wishes,
+                  </FormDescription>
+                  <FormControl>
+                    <Input placeholder="Your name" {...field} />
+                  </FormControl>
+                  <FormMessage className="text-xs" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Your email" {...field} />
+                  </FormControl>
+                  <FormMessage className="text-xs" />
+                </FormItem>
+              )}
+            />
+            <div className="mt-5 flex flex-col gap-5 lg:flex-row">
+              <Button
+                disabled={form.formState.isSubmitSuccessful}
+                variant={
+                  form.formState.isSubmitSuccessful ? 'outline' : 'default'
+                }
+                type="submit"
+                className={cn('w-full font-bold lg:w-auto')}
+              >
+                {form.formState.isSubmitSuccessful ? (
+                  'Sent!'
+                ) : isLoading ? (
+                  <Loader />
+                ) : (
+                  'Send'
+                )}
+              </Button>
+              {form.formState.isSubmitSuccessful && (
+                <Button
+                  onClick={() =>
+                    form.reset({ email: '', message: '', name: '' })
+                  }
+                  type="reset"
+                  className="w-full font-bold lg:w-auto"
+                >
+                  Send a new message
+                </Button>
+              )}
+            </div>
+          </form>
+        </Form>
+      </div>
       <p className="mt-20 self-end text-sm text-gray-500">
         or find me at{' '}
         <span
