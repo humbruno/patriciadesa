@@ -12,6 +12,9 @@ import webflow from '@/assets/webflow.png'
 import { LinkedinIcon } from '@/components/linkedin-icon'
 import type { Navigation, Project, Skill, Tool } from '@/lib/types'
 
+export const RESUME_URL =
+  'https://drive.google.com/file/d/1gwY_pyRoBVq0O469sLRnb0gWGZRyupBc/view'
+
 export const PROJECTS: Project[] = [
   {
     title: 'BetterSleep',
@@ -54,7 +57,7 @@ export const NAVIGATION: Navigation[] = [
   },
   {
     label: 'Resumé',
-    href: 'https://drive.google.com/file/d/1gwY_pyRoBVq0O469sLRnb0gWGZRyupBc/view',
+    href: RESUME_URL,
     external: true
   },
   {
@@ -136,4 +139,4 @@ export const TOOLS: Tool[] = [
     title: 'Notion',
     icon: notion
   }
-]
+] as const

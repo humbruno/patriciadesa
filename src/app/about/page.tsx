@@ -1,4 +1,4 @@
-import hobbies from '@/assets/hobbies.png'
+import hobbies from '@/assets/hobbies.jpg'
 import profilePhoto from '@/assets/profile-photo.png'
 import { buttonVariants } from '@/components/ui/button'
 import {
@@ -7,9 +7,10 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import { LINKEDIN_URL, SKILLS, TOOLS } from '@/lib/constants'
+import { LINKEDIN_URL, RESUME_URL, SKILLS, TOOLS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -116,6 +117,33 @@ export default function About() {
         Out of office, I&apos;m a...
       </h3>
       <Image src={hobbies} alt="Hobbies" className="mt-6 rounded-2xl" />
+      <h3 className="mt-16 text-2xl font-semibold text-gray-700 lg:mt-36">
+        Thanks for stopping by!
+      </h3>
+      <p className="mt-6">
+        Feel free to download my{' '}
+        <a
+          target="_blank"
+          href={RESUME_URL}
+          className="font-bold text-accent hover:underline"
+        >
+          resume
+        </a>{' '}
+        or check out my{' '}
+        <a
+          target="_blank"
+          href={LINKEDIN_URL}
+          className="font-bold text-accent hover:underline"
+        >
+          LinkedIn
+        </a>{' '}
+        profile - don&apos;t hesitate to connect with me. If you have any
+        questions, reach out to me via{' '}
+        <Link href="/contact" className="font-bold text-accent hover:underline">
+          email
+        </Link>
+        .
+      </p>
     </main>
   )
 }
