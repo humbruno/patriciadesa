@@ -152,7 +152,7 @@ export default function Contact() {
         or find me at{' '}
         <span
           onClick={handleEmailClick}
-          className="inline cursor-pointer font-mono font-bold text-green-500 hover:underline"
+          className="inline cursor-pointer font-mono font-bold text-accent hover:underline"
         >
           {EMAIL}
         </span>

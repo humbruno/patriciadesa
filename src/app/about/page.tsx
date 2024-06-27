@@ -1,3 +1,4 @@
+import hobbies from '@/assets/hobbies.png'
 import profilePhoto from '@/assets/profile-photo.png'
 import { buttonVariants } from '@/components/ui/button'
 import {
@@ -12,7 +13,7 @@ import Image from 'next/image'
 
 export default function About() {
   return (
-    <main className="container flex h-full flex-col">
+    <main className="container flex h-full flex-col pb-12">
       <div className="flex flex-col xl:flex-row">
         <div className="flex-1 xl:pt-14">
           <h2 className="text-3xl font-semibold text-gray-700">
@@ -111,6 +112,10 @@ export default function About() {
           ))}
         </TooltipProvider>
       </ul>
+      <h3 className="text-center text-2xl font-semibold text-gray-700 lg:mt-8">
+        Out of office, I&apos;m a...
+      </h3>
+      <Image src={hobbies} alt="Hobbies" className="mt-6 rounded-2xl" />
     </main>
   )
 }
