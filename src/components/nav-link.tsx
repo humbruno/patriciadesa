@@ -17,8 +17,8 @@ export function NavLink({
     <li className="flex">
       <Link
         className={cn(
-          'cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold capitalize text-gray-500 transition-all hover:scale-[105%] hover:bg-black/10',
-          pathname === href ? 'bg-black/10' : ''
+          'cursor-pointer rounded-lg bg-transparent px-3 py-2 text-sm font-semibold capitalize text-gray-500 transition-all hover:scale-[105%]',
+          pathname === href ? 'font-extrabold' : ''
         )}
         href={href}
       >
