@@ -2,7 +2,15 @@ import betterSleep from '@/assets/BetterSleep.jpg'
 import lunis from '@/assets/Lunis.jpg'
 import skyhour from '@/assets/Skyhour.jpg'
 import sleepHero from '@/assets/SleepHero.jpg'
-import type { Navigation, Project, Skill } from '@/lib/types'
+import figma from '@/assets/figma.png'
+import illustrator from '@/assets/illustrator.png'
+import indesign from '@/assets/indesign.png'
+import notion from '@/assets/notion.png'
+import photoshop from '@/assets/photoshop.png'
+import pinterest from '@/assets/pinterest.png'
+import webflow from '@/assets/webflow.png'
+import { LinkedinIcon } from '@/components/linkedin-icon'
+import type { Navigation, Project, Skill, Tool } from '@/lib/types'
 
 export const PROJECTS: Project[] = [
   {
@@ -83,3 +91,45 @@ export const SKILLS: Skill[] = [
       'Optimize content management systems for efficient workflow and seamless content delivery.'
   }
 ] as const
+
+export const LINKEDIN_URL =
+  'https://www.linkedin.com/in/patr%C3%ADciades%C3%A1/'
+
+export const FOOTER_ITEMS = [
+  {
+    title: 'LinkedIn',
+    icon: <LinkedinIcon />,
+    url: LINKEDIN_URL
+  }
+] as const
+
+export const TOOLS: Tool[] = [
+  {
+    title: 'Figma',
+    icon: figma
+  },
+  {
+    title: 'Illustrator',
+    icon: illustrator
+  },
+  {
+    title: 'InDesign',
+    icon: indesign
+  },
+  {
+    title: 'Photoshop',
+    icon: photoshop
+  },
+  {
+    title: 'Pinterest',
+    icon: pinterest
+  },
+  {
+    title: 'Webflow',
+    icon: webflow
+  },
+  {
+    title: 'Notion',
+    icon: notion
+  }
+]

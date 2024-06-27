@@ -17,3 +17,8 @@ export type Skill = {
   title: string
   description: string
 }
+
+export type Tool = {
+  title: string
+  icon: StaticImageData
+}

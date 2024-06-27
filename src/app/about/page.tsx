@@ -1,6 +1,12 @@
 import profilePhoto from '@/assets/profile-photo.png'
 import { buttonVariants } from '@/components/ui/button'
-import { SKILLS } from '@/lib/constants'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
+import { LINKEDIN_URL, SKILLS, TOOLS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -51,7 +57,7 @@ export default function About() {
                     'rounded-2xl bg-accent font-extrabold hover:bg-accent/80'
                 })
               )}
-              href="https://www.linkedin.com/in/patr%C3%ADciades%C3%A1/"
+              href={LINKEDIN_URL}
               target="_blank"
             >
               Let&apos;s connect on LinkedIn
@@ -74,13 +80,36 @@ export default function About() {
         My content creation toolkit draws on my extensive years of experience in
         communication, both in-house and freelance.
       </p>
-      <ul className="grid grid-cols-1 gap-10 pb-20 pt-14 md:grid-cols-2 lg:grid-cols-3 lg:pb-36 lg:pt-20">
+      <ul className="grid grid-cols-1 gap-10 pb-20 pt-14 md:grid-cols-2 lg:grid-cols-3 lg:pb-10 lg:pt-20">
         {SKILLS.map((skill) => (
           <li key={skill.title} className="flex flex-col gap-4">
             <h3 className="text-2xl font-bold text-gray-700">{skill.title}</h3>
             <p className="text-base text-gray-500">{skill.description}</p>
           </li>
         ))}
+      </ul>
+      <h3 className="text-center text-2xl font-semibold text-gray-700">
+        My daily tools
+      </h3>
+      <ul className="flex flex-wrap items-center justify-evenly gap-8 pb-20 pt-14 lg:pb-10 lg:pt-14">
+        <TooltipProvider delayDuration={0}>
+          {TOOLS.map((tool) => (
+            <li
+              key={tool.title}
+              className="flex flex-col items-center justify-center"
+            >
+              <Tooltip>
+                <TooltipTrigger className="cursor-default">
+                  <Image src={tool.icon} alt={tool.title} className="size-16" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{tool.title}</p>
+                </TooltipContent>
+              </Tooltip>
+              <span className="mt-4 block lg:hidden">{tool.title}</span>
+            </li>
+          ))}
+        </TooltipProvider>
       </ul>
     </main>
   )

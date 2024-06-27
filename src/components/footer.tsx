@@ -1,18 +1,10 @@
-import { LinkedinIcon } from './linkedin-icon'
+import { FOOTER_ITEMS } from '@/lib/constants'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
 } from './ui/tooltip'
-
-const FOOTER_ITEMS = [
-  {
-    title: 'LinkedIn',
-    icon: <LinkedinIcon />,
-    url: 'https://www.linkedin.com/in/patr%C3%ADciades%C3%A1/'
-  }
-] as const
 
 export function Footer() {
   return (
