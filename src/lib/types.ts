@@ -12,3 +12,8 @@ export type Navigation = {
   href: string
   external?: boolean
 }
+
+export type Skill = {
+  title: string
+  description: string
+}

@@ -2,7 +2,7 @@ import betterSleep from '@/assets/BetterSleep.jpg'
 import lunis from '@/assets/Lunis.jpg'
 import skyhour from '@/assets/Skyhour.jpg'
 import sleepHero from '@/assets/SleepHero.jpg'
-import type { Navigation, Project } from '@/lib/types'
+import type { Navigation, Project, Skill } from '@/lib/types'
 
 export const PROJECTS: Project[] = [
   {
@@ -48,5 +48,38 @@ export const NAVIGATION: Navigation[] = [
   {
     label: 'Contact',
     href: '/contact'
+  }
+] as const
+
+export const SKILLS: Skill[] = [
+  {
+    title: 'Content Research',
+    description:
+      'Continuously analyze trends and feedback to create engaging and relevant content that resonates with the target audience.'
+  },
+  {
+    title: 'Content Strategy',
+    description:
+      'Plan, organize and create intuitive content that aligns with the user needs, and resonates with brand objectives.'
+  },
+  {
+    title: 'Voice & Tone',
+    description:
+      'Craft unique brand voices that establish strong connections with diverse audiences, ensuring a consistent messaging.'
+  },
+  {
+    title: 'Storytelling',
+    description:
+      'Create narratives that resonate with the user, using different techniques to simplify complex ideas and enhance memorability.'
+  },
+  {
+    title: 'Copy Editing',
+    description:
+      'Refine and enhance content to ensure clarity, coherence, and adherence to brand standards, elevating readability.'
+  },
+  {
+    title: 'CMS & SEO',
+    description:
+      'Optimize content management systems for efficient workflow and seamless content delivery.'
   }
 ] as const
