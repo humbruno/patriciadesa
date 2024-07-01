@@ -8,10 +8,10 @@ export function Hero() {
       <p className="mx-auto lg:max-w-[70%] lg:text-lg">
         I&apos;m a text-savvy content creator based in Lisbon, Portugal, with
         over 7 years of experience in content writing, copywriting, copy
-        editing, and proofreading. I&apos;m passionate about creating engaging
-        and effective real estate, interior design and sleep content. My
-        specialties lie in crafting compelling stories with versatility and a
-        keen eye for subtleties.
+        editing, and proofreading. I&apos;ve honed my skills working with
+        lifestyle, culture, travel, food, real estate, health, legal & finance,
+        interior design and sleep content. My specialties lie in crafting
+        compelling stories with versatility and a keen eye for subtleties.
       </p>
     </section>
   )
