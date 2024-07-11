@@ -13,7 +13,7 @@ import { LinkedinIcon } from '@/components/linkedin-icon'
 import type { Navigation, Project, Skill, Tool } from '@/lib/types'
 
 export const RESUME_URL =
-  'https://drive.google.com/file/d/1gwY_pyRoBVq0O469sLRnb0gWGZRyupBc/view'
+  'https://drive.google.com/file/d/1CSMLzGdFvAOBmKj4MrTJ0aDDASZ5hAeL/view'
 
 export const PROJECTS: Project[] = [
   {
